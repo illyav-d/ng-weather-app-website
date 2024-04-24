@@ -1,0 +1,36 @@
+<div class="container-fluid" id="hero-section">
+    <div class="row min-vh-100 d-flex align-items-center ">
+        <div class=" text-center ">
+            <p class="lead mb-4"></p>
+            <h1 class="display-5 fw-bold">WEATHER WITH ANGULAR</h1>
+            <p class="lead mb-4">Using ANGULAR to display the weather in your area. </p>
+            <h1 class="display-5 fw-bold">______</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead">{{weather.latitude}} - {{weather.longitude}} </p>
+                <h2>{{city}}</h2>
+                <p class="lead mb-4">{{getWeatherDescriptionByCode(weather.current.weather_code)}}
+                </p>
+                <h1>{{weather.current.temperature_2m}}{{weather.daily_units.temperature_2m_max}}</h1>
+
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    @for (item of weather.daily.time; track item; let i=$index) {
+                    @if(i !=0){
+                    <div class="card col-2 ">
+                        <div class="card-body">
+                            <p class="lead">{{getDayByCode(parseStringToDate(weather.daily.time[i]).getDay())}} </p>
+                            <img [src]="getWeatherImgByCode(weather.daily.weather_code[i])" class="weather-icon">
+                            <p class="lead">
+                                {{weather.daily.temperature_2m_max[i]}}{{weather.daily_units.temperature_2m_max}}</p>
+                            <p class="lead">
+                                {{weather.daily.temperature_2m_min[i]}}{{weather.daily_units.temperature_2m_max}}</p>
+                        </div>
+                    </div>
+                    }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+#hero-section {
+  background-image: url(https://img.freepik.com/premium-vector/sky-clouds-design-with-flat-cartoon-poster-flyers-poshttpstcards-web-banners_771576-58.jpg);
+  background-size: cover;
+}
+#quote-quote {
+  font-style: italic !important;
+}
+
+.card {
+  background-color: transparent;
+  border-color: transparent;
+}
+.weather-icon {
+  width: 25%;
+}
+.lead {
+  margin: 0%;
+}
