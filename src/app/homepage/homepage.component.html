@@ -6,7 +6,7 @@
             <p class="lead mb-4">Using ANGULAR to display the weather in your area. </p>
             <h1 class="display-5 fw-bold">______</h1>
             <div class="col-lg-6 mx-auto">
-                <p class="lead">{{weather.latitude}} - {{weather.longitude}} </p>
+                <p class="lead">{{weather.latitude| number : '1.2-2'}} - {{weather.longitude| number : '1.2-2'}} </p>
                 <h2>{{city}}</h2>
                 <p class="lead mb-4">{{getWeatherDescriptionByCode(weather.current.weather_code)}}
                 </p>
