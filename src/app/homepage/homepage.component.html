@@ -8,6 +8,7 @@
             <div class="col-lg-6 mx-auto">
                 <p class="lead">{{weather.latitude| number : '1.2-2'}} - {{weather.longitude| number : '1.2-2'}} </p>
                 <h2>{{city}}</h2>
+                <h2>TODAY</h2>
                 <p class="lead mb-4">{{getWeatherDescriptionByCode(weather.current.weather_code)}}
                 </p>
                 <h1>{{weather.current.temperature_2m}}{{weather.daily_units.temperature_2m_max}}</h1>
@@ -17,7 +18,7 @@
                 <div class="row">
                     @for (item of weather.daily.time; track item; let i=$index) {
                     @if(i !=0){
-                    <div class="card col-2 ">
+                    <div class="card col-12 col-md-3 col-lg-2">
                         <div class="card-body">
                             <p class="lead">{{getDayByCode(parseStringToDate(weather.daily.time[i]).getDay())}} </p>
                             <img [src]="getWeatherImgByCode(weather.daily.weather_code[i])" class="weather-icon">
